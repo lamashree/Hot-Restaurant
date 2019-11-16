@@ -24,6 +24,15 @@ var tables = [
     }
 ];
 
+var waitlist = [
+    {
+        name: "cc",
+        phone: "0987654321",
+        email: "ccc@bbb.com",
+        uniqueId: 3
+    }
+];
+
 //main page
 app.get("/", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
