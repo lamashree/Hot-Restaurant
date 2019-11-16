@@ -35,7 +35,9 @@
                     <h4>Current Reservations</h4>
                   </div>
                   <div class="card-body">
-                    <ul id="tableList" class="list-group"><li class="list-group-item mt-4"><h2>Table #1</h2><hr><h2>ID: 3</h2><h2>Name: Testing</h2><h2>Email: 2</h2><h2>Phone: 1</h2></li></ul>
+                    <ul id="tableList" class="list-group">
+                      <li class="list-group-item mt-4"><h2>Table #1</h2><hr><h2>ID: 3</h2><h2>Name: Testing</h2><h2>Email: 2</h2><h2>Phone: 1</h2></li>
+                    </ul>
                   </div>
                 </div>
         
@@ -50,7 +52,16 @@
                 </div>
               </div>
 ​
-    <script type="text/javascript" src="./JS/app.js"></script>
+    <script type="text/javascript">
+      $.get("/api/view", function(data){
+        console.log(data);
+        data.forEach(function(element){
+          var li = $("<li>");
+          li.html("<h2>Name:" + element.name + "Phone: " + element.phone + "email: " + element.email + "</h2>");
+          $("#tableList").append(li);
+          });
+      });
+    </script>
 ​
 </body>
 ​

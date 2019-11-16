@@ -9,29 +9,9 @@ var PORT = 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var tables = [
-    {
-        name: "aa",
-        phone: "123456789",
-        email: "aaa@bbb.com",
-        uniqueId: 1
-    },
-    {
-        name: "bb",
-        phone: "123456788",
-        email: "cc@bbb.com",
-        uniqueId: 2
-    }
-];
+var tables = [];
 
-var waitlist = [
-    {
-        name: "cc",
-        phone: "0987654321",
-        email: "ccc@bbb.com",
-        uniqueId: 3
-    }
-];
+var waitlist = [];
 
 //main page
 app.get("/", function(req, res) {
@@ -39,8 +19,8 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
   });
 
-app.get("/view", function(req, res){
-    res.sendFile(path.join(__dirname, "tables.html"));
+app.get("/api/view", function(req, res){
+    res.json(tables);
 });
 
 app.get("/reserve", function(req, res){
@@ -52,7 +32,11 @@ app.post("/reserve", function(req, res){
 
     console.log(newTable);
   
-    tables.push(newTable);
+    if (tables.length < 5){
+        tables.push(newTable);
+    } else {
+        waitlist.push(newTable);
+    }
   
     res.json(newTable);
 });
@@ -62,16 +46,5 @@ app.post("/reserve", function(req, res){
 app.listen(PORT, function(){
     console.log("App listening on PORT " + PORT);
 });
-app.get("/Api/view/:table", function(req, res){
-  var chosen = req.params.table;
-  console.log(req);
-  for (var i = 0; i < tables.length; i++){
-      if (chosen === table[i]. routeName){
-          return res.json(table[i])
-      }
-  }
-  return res.json(false);
-})
-
 
 
