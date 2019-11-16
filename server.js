@@ -38,18 +38,28 @@ app.get("/", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "index.html"));
   });
-  app.get("/tables", function(req, res) {
-    // res.send("Welcome to the Star Wars Page!")
-    res.sendFile(path.join(__dirname, "tables.html"));
-  });
+  app.get("/view", function(req, res){
+    res.json(tables);
+});
 
-  app.get("/reservations", function(req, res) {
-    // res.send("Welcome to the Star Wars Page!")
+app.get("/view", function(req, res){
+    res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/reserve", function(req, res){
     res.sendFile(path.join(__dirname, "reservations.html"));
-  });
-// app.get("/reserve", function(req, res){
-//     res.send("Welcome to the reserve page");
-// });
+});
+
+app.post("/reserve", function(req, res){
+    var newTable = req.body;
+
+    console.log(newTable);
+  
+    tables.push(newTable);
+  
+    res.json(newTable);
+});
+
 
 
 app.listen(PORT, function(){
