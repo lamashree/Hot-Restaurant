@@ -25,8 +25,10 @@ var tables = [
 
 var waitlist = [
     {
-        number: 1,
-        uniqueId: 2
+        name: "cc",
+        phone: "0987654321",
+        email: "ccc@bbb.com",
+        uniqueId: 3
     }
 ];
 
