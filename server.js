@@ -23,6 +23,13 @@ var tables = [
     }
 ];
 
+var waitlist = [
+    {
+        number: 1,
+        uniqueId: 2
+    }
+];
+
 //main page
 app.get("/", function(req, res){
     res.send("Welcome to the home page");
