@@ -32,9 +32,19 @@ app.get("/view", function(req, res){
     res.json(tables);
 });
 
-app.get("/reserve", function(req, res){
-    res.send("Welcome to the reserve page");
+app.post("/reserve", function(req, res){
+    var newTable = req.body;
+
+    console.log(newTable);
+  
+    tables.push(newTable);
+  
+    res.json(newTable);
 });
+
+// app.get("/reserve", function(req, res){
+//     res.send("Welcome to the reserve page");
+// });
 
 
 app.listen(PORT, function(){
