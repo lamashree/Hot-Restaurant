@@ -1,5 +1,6 @@
 var express = require("express");
 var mysql = require("mysql");
+var path = require("path");
 
 var app = express();
 var PORT = 8080;
@@ -25,11 +26,11 @@ var tables = [
 
 //main page
 app.get("/", function(req, res){
-    res.send("Welcome to the home page");
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/view", function(req, res){
-    res.json(tables);
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 app.post("/reserve", function(req, res){
