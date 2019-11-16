@@ -24,9 +24,22 @@ var tables = [
     }
 ];
 
+var waitlist = [
+    {
+        name: "cc",
+        phone: "0987654321",
+        email: "ccc@bbb.com",
+        uniqueId: 3
+    }
+];
+
 //main page
-app.get("/", function(req, res){
+app.get("/", function(req, res) {
+    // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "index.html"));
+  });
+  app.get("/view", function(req, res){
+    res.json(tables);
 });
 
 app.get("/view", function(req, res){
@@ -52,5 +65,16 @@ app.post("/reserve", function(req, res){
 app.listen(PORT, function(){
     console.log("App listening on PORT " + PORT);
 });
+app.get("/Api/view/:table", function(req, res){
+  var chosen = req.params.table;
+  console.log(req);
+  for (var i = 0; i < tables.length; i++){
+      if (chosen === table[i]. routeName){
+          return res.json(table[i])
+      }
+  }
+  return res.json(false);
+})
+
 
 

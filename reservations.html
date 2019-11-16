@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-​
 
 <head>
     <meta charset="UTF-8">
@@ -15,7 +14,6 @@
 </head>
 ​
 ​
-​
 
 <body>
     <div class="container">
@@ -28,66 +26,57 @@
         </div>
         <div class="row">
 
-            <div class="col-12">
-
+            ​<div class="col-lg-12">
+                <!-- Reservation Page -->
                 <div class="card">
                     <div class="card-header">
-                        <h3><strong>Add Characters</strong></h3>
+                        Table Reservation
                     </div>
                     <div class="card-body">
-                        <form method="POST" role="form">
-
+                        <form role="form">
                             <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name">
+                                <label for="reserve-name">Name</label>
+                                <input type="text" class="form-control" id="reserve-name">
                             </div>
-
                             <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="text" class="form-control" id="phone">
+                                <label for="reserve-phone">Phone Number</label>
+                                <input type="text" class="form-control" id="reserve-phone">
                             </div>
-
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="text" class="form-control" id="email">
+                                <label for="reserve-email">Email</label>
+                                <input type="text" class="form-control" id="reserve-email">
                             </div>
-
                             <div class="form-group">
-                                <label for="uniqueId">Unique ID</label>
-                                <input type="text" class="form-control" id="uniqueId">
+                                <label for="reserve-unique-id">Unique ID</label>
+                                <input type="text" class="form-control" id="reserve-unique-id">
                             </div>
-
+                            <button type="submit" id="submit-btn" class="btn btn-primary submit">Submit</button>
                         </form>
-                        <br>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-primary btn-md" id="add-btn"><span
-                                    class="fa fa-fire"></span> Add to the Force</button>
-                        </div>
                     </div>
                 </div>
-                ​
-                <script type="text/javascript">
-                    $("#add-btn").on("click", function (event) {
-                        event.preventDefault();
-                        var newCharacter = {
-                            name: $("#name").val().trim(),
-                            phone: $("#phone").val().trim(),
-                            email: $("#email").val().trim(),
-                            uniqueId: $("#uniqueId").val().trim()
-                        };
+            </div>
 
-                        // Question: What does this code do??
-                        // $.post - jQuery, ajax
-                        // first argument will trigger the /api/characters post route, and second argument is the object you want to post
-                        $.post("/reserve", newCharacter)
-                            .then(function (data) {
-                                //console log on client side
-                                console.log("reserve.html", data);
-                                alert("Adding character...");
-                            });
-                    });
-                </script>
-                ​
+
+            <script type="text/javascript">
+                $("#submit-btn").on("click", function (event) {
+                    event.preventDefault();
+                    var newCharacter = {
+                        name: $("#reserve-name").val().trim(),
+                        phone: $("#reserve-phone").val().trim(),
+                        email: $("#reserve-email").val().trim(),
+                        uniqueId: $("#reserve-unique-id").val().trim()
+                    };
+
+                    $.post("/reserve", newCharacter)
+                        .then(function (data) {
+                            //console log on client side
+                            console.log("reserve.html", data);
+                            alert("Adding character...");
+                        });
+                });
+
+            </script>
+            ​
 </body>
 ​
 
