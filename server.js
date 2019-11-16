@@ -33,6 +33,10 @@ app.get("/view", function(req, res){
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/reserve", function(req, res){
+    res.sendFile(path.join(__dirname, "reservations.html"));
+});
+
 app.post("/reserve", function(req, res){
     var newTable = req.body;
 
@@ -43,9 +47,6 @@ app.post("/reserve", function(req, res){
     res.json(newTable);
 });
 
-// app.get("/reserve", function(req, res){
-//     res.send("Welcome to the reserve page");
-// });
 
 
 app.listen(PORT, function(){
