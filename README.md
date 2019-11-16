@@ -10,3 +10,8 @@ Creating a restaurant reservation application.
 * [NPM-mysql]
 * [JavaScript]
 
+## Authors -- 
+* [Ryan Isaacson]
+* [Shreejaya Lama]
+* [Stephanie Hoffman]
+* [Xiaojie Liu]
