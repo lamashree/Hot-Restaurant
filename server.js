@@ -38,14 +38,14 @@ app.get("/", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "index.html"));
   });
-  app.get("/view", function(req, res) {
+  app.get("/tables", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-  app.get("/reservation", function(req, res) {
+  app.get("/reservations", function(req, res) {
     // res.send("Welcome to the Star Wars Page!")
-    res.sendFile(path.join(__dirname, "reserv.html"));
+    res.sendFile(path.join(__dirname, "reservations.html"));
   });
 // app.get("/reserve", function(req, res){
 //     res.send("Welcome to the reserve page");
