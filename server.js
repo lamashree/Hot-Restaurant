@@ -2,7 +2,6 @@ var express = require("express");
 var mysql = require("mysql");
 var path = require("path");
 
-
 var app = express();
 var PORT = 8080;
 
@@ -37,6 +36,10 @@ app.get("/", function(req, res) {
 app.get("/reserve", function(req, res){
     res.send("index.html");
 });
+
+// app.get("/reserve", function(req, res){
+//     res.send("Welcome to the reserve page");
+// });
 
 
 app.listen(PORT, function(){

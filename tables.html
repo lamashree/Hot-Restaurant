@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hot Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+​
+​
+​
+​
+<body>
+    <div class="container">
+        <div class="jumbotron">
+          <h1>Hot Restaurant</h1>
+          <h3>Book your table as soon as you can! We only have _ seats left!</h3>
+          <hr>
+          <button class="btn btn-primary btn-lg"><span class="fa fa-plus"></span> View Tables</button>
+          <button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Reserve a Table</button>
+        </div>
+        <div class="row">
+    
+            <div class="col-lg-12">
+
+                <!-- Current Tables in Use -->
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Current Reservations</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul id="tableList" class="list-group"><li class="list-group-item mt-4"><h2>Table #1</h2><hr><h2>ID: 3</h2><h2>Name: Testing</h2><h2>Email: 2</h2><h2>Phone: 1</h2></li></ul>
+                  </div>
+                </div>
+        
+                <!-- Waiting List Card -->
+                <div class="card mt-4">
+                  <div class="card-header">
+                    <h4>Waiting List</h4>
+                  </div>
+                  <div class="card-body">
+                    <ul id="waitList" class="list-group"></ul>
+                  </div>
+                </div>
+              </div>
+​
+    <script type="text/javascript" src="./JS/app.js"></script>
+​
+</body>
+​
+</html>
