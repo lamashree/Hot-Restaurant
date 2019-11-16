@@ -42,13 +42,24 @@ app.get("/", function(req, res) {
     res.json(tables);
 });
 
-app.get("/reserve", function(req, res){
-    res.send("index.html");
+app.get("/view", function(req, res){
+    res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-// app.get("/reserve", function(req, res){
-//     res.send("Welcome to the reserve page");
-// });
+app.get("/reserve", function(req, res){
+    res.sendFile(path.join(__dirname, "reservations.html"));
+});
+
+app.post("/reserve", function(req, res){
+    var newTable = req.body;
+
+    console.log(newTable);
+  
+    tables.push(newTable);
+  
+    res.json(newTable);
+});
+
 
 
 app.listen(PORT, function(){
